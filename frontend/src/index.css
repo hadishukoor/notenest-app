@@ -1,0 +1,229 @@
+:root {
+  --primary-color: #6366f1;
+  --primary-hover-color: #4f46e5;
+  --background-color: #f8fafc;
+  --container-bg-color: #ffffff;
+  --text-color: #0f172a;
+  --subtle-text-color: #64748b;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* --- The Guaranteed Sticky Footer Styles --- */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  margin-top: auto;
+  text-align: center;
+  color: var(--subtle-text-color);
+  border-top: 1px solid var(--border-color);
+}
+/* ------------------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--container-bg-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  margin-top: 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links .nav-link {
+  color: var(--subtle-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1.5rem;
+}
+.nav-links .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.logout-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 1rem;
+  transition: background-color 0.2s;
+}
+.logout-btn:hover { background-color: var(--primary-hover-color); }
+
+.page-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.page-subheading {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--subtle-text-color);
+  margin-top: 0.5rem;
+}
+
+.form-container {
+  background: var(--container-bg-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 420px;
+  margin: 2rem auto;
+}
+.form-container h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.form-group input:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: transparent;
+}
+form button {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+form button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.notes-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+.note-form {
+  flex: 1;
+  background: var(--container-bg-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.notes-list {
+  flex: 2;
+}
+.note-form h2, .notes-list h2 {
+  text-align: left;
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.note-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.note-item {
+  background: white;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.note-item h3 {
+  margin-top: 0;
+}
+.note-item p {
+  color: var(--subtle-text-color);
+}
+.note-item button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ef4444;
+  width: auto;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.note-item:hover button {
+  opacity: 1;
+}
+
+.footer-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
