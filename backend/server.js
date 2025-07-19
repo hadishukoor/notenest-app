@@ -1,3 +1,4 @@
+// notenest/backend/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -16,12 +17,15 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 
+// PORT should be read into a variable once
+const PORT = process.env.PORT || 5000;
+
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅ MongoDB connected successfully!');
-    app.listen(process.env.PORT || 5000, () => {
-      console.log(`✅ Server started on http://localhost:${process.env.PORT || 5000}`);
+    app.listen(PORT, () => {
+      console.log(`✅ Server started on http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
