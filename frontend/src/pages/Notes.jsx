@@ -19,7 +19,7 @@ const Notes = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch('/api/notes', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notes`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) {
@@ -45,7 +45,7 @@ const Notes = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('/api/notes', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const Notes = () => {
   const handleDeleteNote = async (noteId) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`/api/notes/${noteId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notes/${noteId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -86,11 +86,9 @@ const Notes = () => {
 
   return (
     <div className="notes-container">
-      {/* This 'note-form' class is key for styling the container */}
       <div className="note-form">
         <h2>Create a New Note</h2>
         <form onSubmit={handleCreateNote}>
-          {/* These form elements will now be styled by the rules in index.css */}
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input
